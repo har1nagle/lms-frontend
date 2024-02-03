@@ -61,5 +61,42 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  
+
+```
+### Adding plugins and dependencies
+
+```
+  npm install @reduxjs/toolkit react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
+
+```
+
+
+
+
+
+
+
+
+
+### 1 this is git in project update cmd
+
+```
+git init 
+
+git commit -m "setting up plain vite project done"
+
+git checkout -b baster
+
+git remote add origin https://github.com/har1nagle/lms-frontend.git
+
+```
+
+### 1.1 this use for updated time 
+```
+git add . 
+
+git commit -m "Added tailwind config"
+
+git push origin baster
+
 ```
