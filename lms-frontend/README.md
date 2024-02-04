@@ -41,6 +41,7 @@
 ```
   cd lms-frontend
   npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init -p
 ```
 
 2. Create tailwind config file
