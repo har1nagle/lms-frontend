@@ -1,5 +1,3 @@
-// import { BsInstagram, BsLinkdin, BsTwitter } from 'react-icons/bs';
-
 import { BsGithub, BsLinkedin, BsInstagram, BsTwitter} from "react-icons/bs";
 
 function Footer() {
