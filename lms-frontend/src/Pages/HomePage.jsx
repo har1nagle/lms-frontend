@@ -28,7 +28,7 @@ function HomePage() {
             </Link>
 
             <Link to="/contact">
-              <button className="border border-yellow-500 text-yellow-500 px-5 py-3 rounded-md font-semibold text-lg cursor-pointer hover:bg-yellow-100 transition-all ease-in-out duration-300">
+              <button className="border border-yellow-500 text-yellow-500 px-5 py-3 mt-3 rounded-md font-semibold text-lg cursor-pointer hover:bg-yellow-100 transition-all ease-in-out duration-300">
                 Contact Us
               </button>
             </Link>
