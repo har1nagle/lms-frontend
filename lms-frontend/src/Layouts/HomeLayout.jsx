@@ -1,12 +1,11 @@
-import {AiFillCloseCircle} from "react-icons/ai";
-import {FiMenu} from "react-icons/fi";
-import {Link, useNavigate} from 'react-router-dom';
+import { AiFillCloseCircle } from "react-icons/ai";
+import { FiMenu } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
 
 import Footer from "../Components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 
-function HomeLayout({children}) {
-
+function HomeLayout({ children }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -16,18 +15,16 @@ function HomeLayout({children}) {
   // for displaying the options acc to role
   const role = useSelector((state) => state?.auth?.role);
 
-
   function changeWidth() {
-    const drawerSide = document.getElementsByClassName("drawer-side")
+    const drawerSide = document.getElementsByClassName("drawer-side");
     drawerSide[0].style.width = "auto";
-
   }
 
   function hideDrawer() {
     const element = document.getElementsByClassName("drawer-toggle");
     element[0].checked = false;
 
-    const drawerSide = document.getElementsByClassName("drawer-side")
+    const drawerSide = document.getElementsByClassName("drawer-side");
     drawerSide[0].style.width = "auto";
   }
 
@@ -37,32 +34,29 @@ function HomeLayout({children}) {
     // const res = await dispatch(logout());
 
     // if(res?.payload?.success)
-    navigate("/")
-
+    navigate("/");
   }
-  return(
+  return (
     <div className="min-h-[90vh]">
       <div className="drawer absolute left-0 z-50 w-fit">
         <input className="drawer-toggle" id="my-drawer" type="checkbox" />
         <div className="drawer-content">
           <label htmlFor="my-drawer" className="cursor-pointer relative">
-          <FiMenu 
-            onClick={changeWidth}
-            size={"32px"}
-            className="font-bold text-black m-4"
-          
-          />
+            <FiMenu
+              onClick={changeWidth}
+              size={"32px"}
+              className="font-bold text-white m-4"
+            />
           </label>
         </div>
 
         <div className="drawer-side w-0">
-          <label htmlFor="my-drawer" className="drawer-overlay">
-          </label>
+          <label htmlFor="my-drawer" className="drawer-overlay"></label>
 
-          <ul className="menu p-4 w-48 sm:w-80 bg-base-200 text-base-content relative">
+          <ul className="menu p-4 w-48 h-[100%] sm:w-80 bg-base-200 text-base-content relative">
             <li className="w-fit absolute right-2 z-50">
               <button onClick={hideDrawer}>
-                <AiFillCloseCircle size={24}/>
+                <AiFillCloseCircle size={24} />
               </button>
             </li>
 
@@ -70,7 +64,7 @@ function HomeLayout({children}) {
               <Link to="/"> Home </Link>
             </li>
 
-            {isLoggedIn && role === 'ADMIN' && (
+            {isLoggedIn && role === "ADMIN" && (
               <li>
                 <Link to="/admin/dashboard"> Admin DashBoard </Link>
               </li>
@@ -89,7 +83,6 @@ function HomeLayout({children}) {
             </li>
 
             {!isLoggedIn && (
-
               <li className="absolute bottom-4 w-[90%]">
                 <div className="w-full flex items-center justify-center">
                   <button className=" bg-blue-700 px-4 py-1 font-semibold rounded-md w-full">
@@ -99,13 +92,11 @@ function HomeLayout({children}) {
                   <button className="bg-orange-600 px-4 py-1 font-semibold rounded-md w-full">
                     <Link to="/login">Signup</Link>
                   </button>
-
                 </div>
               </li>
             )}
 
             {isLoggedIn && (
-
               <li className="absolute bottom-4 w-[90%]">
                 <div className="w-full flex items-center justify-center">
                   <button className=" bg-blue-700 px-4 py-1 font-semibold rounded-md w-full m-2">
@@ -115,23 +106,17 @@ function HomeLayout({children}) {
                   <button className="bg-orange-600 px-4 py-1 font-semibold rounded-md w-full">
                     <Link onCLick={handleLogout}>Logout</Link>
                   </button>
-
                 </div>
               </li>
             )}
-
           </ul>
-
         </div>
-
       </div>
-     
-     {children}
-     <Footer />
-    
-    </div>
-  )
 
+      {children}
+      <Footer />
+    </div>
+  );
 }
 
 export default HomeLayout;
